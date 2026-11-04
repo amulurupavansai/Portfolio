@@ -16,10 +16,19 @@ export const site = {
 export const hero = {
   greeting: "Hi, I'm",
   name: "Amuluru Pavan Sai",
-  headline:
-    "Management Trainee at Neeyamo · HR-tech & payroll · Looking to grow into Product Manager / Associate PM / Business Analyst roles",
+  headline: "Management Trainee at Neeyamo",
+  typedPrefix: "Currently working on",
+  typed: [
+    "global payroll technology",
+    "requirements & BRDs",
+    "GenAI assistant testing",
+    "test automation",
+    "HR-tech benchmarking",
+  ],
+  tagline:
+    "Looking to grow into Product Manager / Associate PM / Business Analyst roles in HR-tech & payroll.",
   subline:
-    "Working on requirements, testing and automation for global payroll technology — and learning product management on the job.",
+    "IIT Palakkad graduate (B.Tech, Electrical Engineering) in the Emerging Leaders Program at a global payroll & EOR technology company.",
   photo: "/photo.jpg",
   buttons: {
     work: "View Work",
@@ -38,14 +47,15 @@ export const about = {
     "Outside work I led a 50+ member students' council and 1,000-participant programs — which taught me to ship with, and for, many stakeholders.",
   ],
   stats: [
-    { value: "25", label: "component BRDs prepared" },
-    { value: "50+", label: "member council led" },
-    { value: "1,000", label: "participants across programs run" },
+    { value: 25, suffix: "", label: "component BRDs prepared" },
+    { value: 50, suffix: "+", label: "member council led" },
+    { value: 1000, suffix: "", label: "participants across programs run" },
   ],
 };
 
 export type CaseStudy = {
   title: string;
+  category: string;
   tag: string;
   problem: string;
   role: string;
@@ -57,9 +67,11 @@ export const work = {
   heading: "Work Highlights",
   intro:
     "Case studies from my time at Neeyamo and beyond, described generically — no client or internal product details.",
+  filters: ["All", "Automation", "AI & Testing", "Requirements", "Implementation", "Research"],
   caseStudies: [
     {
       title: "Payroll tax reporting automation",
+      category: "Automation",
       tag: "Automation · Payroll",
       problem:
         "A statutory payroll-tax report was being produced manually by a partner, and the logic behind it was not documented.",
@@ -71,6 +83,7 @@ export const work = {
     },
     {
       title: "AI agent quality testing",
+      category: "AI & Testing",
       tag: "AI · QA",
       problem:
         "A GenAI assistant in an employee self-service product needs to be tested against realistic payroll scenarios.",
@@ -82,6 +95,7 @@ export const work = {
     },
     {
       title: "Payroll transformation BRDs",
+      category: "Requirements",
       tag: "Requirements · Enterprise",
       problem:
         "A large enterprise payroll transformation had requirements scattered across teams and client workshops.",
@@ -93,6 +107,7 @@ export const work = {
     },
     {
       title: "Client implementation",
+      category: "Implementation",
       tag: "Implementation · Client-facing",
       problem:
         "An international client's payroll implementation.",
@@ -104,6 +119,7 @@ export const work = {
     },
     {
       title: "Test automation",
+      category: "Automation",
       tag: "Automation · Quality",
       problem:
         "Regression testing for payroll modules is currently manual.",
@@ -115,6 +131,7 @@ export const work = {
     },
     {
       title: "Competitive benchmarking & global payroll mappings",
+      category: "Research",
       tag: "Research · Product",
       problem:
         "Understanding how the platform compares with leading global HCM suites, and preparing inputs for French payroll (DSN).",
@@ -126,6 +143,7 @@ export const work = {
     },
     {
       title: "AI Collections Product Concept",
+      category: "AI & Testing",
       tag: "Case competition · Fintech",
       problem:
         "An NBFC loan-recovery problem from the TVS Credit E.P.I.C. analytics case (Aug 2025): recover dues without needlessly contacting good customers.",

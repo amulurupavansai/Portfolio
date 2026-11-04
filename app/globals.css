@@ -4,13 +4,75 @@
 
 html { scroll-behavior: smooth; }
 body { @apply bg-white text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300; }
-section { scroll-margin-top: 5rem; }
+section { scroll-margin-top: 4.5rem; }
+::selection { background: rgba(99,102,241,.3); }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* ---------- Gradient text ---------- */
+.grad-text {
+  background-image: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #6366f1);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradShift 6s linear infinite;
+}
+@keyframes gradShift { to { background-position: 250% 0; } }
+
+/* ---------- Hero background ---------- */
+.hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: -1; }
+.blob { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .45; animation: floaty 14s ease-in-out infinite; }
+.dark .blob { opacity: .28; }
+.blob.b1 { width: 380px; height: 380px; background: #6366f1; top: -80px; left: -60px; }
+.blob.b2 { width: 320px; height: 320px; background: #ec4899; top: 120px; right: -80px; animation-delay: -4s; }
+.blob.b3 { width: 300px; height: 300px; background: #06b6d4; bottom: -100px; left: 35%; animation-delay: -8s; }
+@keyframes floaty { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(40px,-30px) scale(1.1); } 66% { transform: translate(-30px,30px) scale(.95); } }
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(to right, rgba(100,116,139,.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,116,139,.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* ---------- Typing caret ---------- */
+.caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: -.15em; background: currentColor; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- Spotlight card ---------- */
+.spot { position: relative; overflow: hidden; }
+.spot::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), rgba(99,102,241,.16), transparent 60%);
+}
+.spot:hover::before { opacity: 1; }
+.spot::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s; border-radius: inherit; padding: 1px;
+  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), rgba(168,85,247,.8), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.spot:hover::after { opacity: 1; }
+
+/* ---------- Marquee ---------- */
+.marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Timeline line grows ---------- */
+.tl-line { transform-origin: top; transform: scaleY(0); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
+.tl-line.visible { transform: scaleY(1); }
+
+/* ---------- Photo ring ---------- */
+.photo-ring { background: conic-gradient(from 0deg, #6366f1, #a855f7, #ec4899, #06b6d4, #6366f1); animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .8s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0ms); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-fadeUp { animation: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .tl-line { transform: none; }
 }
