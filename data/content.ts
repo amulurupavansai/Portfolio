@@ -9,7 +9,7 @@ export const site = {
   description:
     "Portfolio of Amuluru Pavan Sai — IIT Palakkad graduate and Management Trainee at Neeyamo, building for HR-tech & global payroll.",
   // Set this to your deployed URL (used for Open Graph / canonical links).
-  url: "https://amulurupavansai.vercel.app",
+  url: "https://portfolio-gules-tau-7gcfg547uh.vercel.app",
   ogImage: "/photo.jpg",
 };
 
@@ -268,7 +268,7 @@ export const contact = {
   linkedinLabel: "linkedin.com/in/amuluru-pavan-sai-573390258",
   // ⚠️ PLACEHOLDER: replace with your Formspree form ID (the part after /f/
   // in https://formspree.io/f/xxxxxxxx). The form won't submit until you do.
-  formspreeId: "YOUR_FORMSPREE_FORM_ID",
+  formspreeId: "xwllyneb",
   form: {
     name: "Name",
     email: "Email",
