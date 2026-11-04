@@ -19,7 +19,7 @@ export const hero = {
   headline:
     "Management Trainee at Neeyamo · HR-tech & payroll · Looking to grow into Product Manager / Associate PM / Business Analyst roles",
   subline:
-    "I turn messy payroll processes and cross-team inputs into clear requirements, tested AI features and products engineering can build.",
+    "Working on requirements, testing and automation for global payroll technology — and learning product management on the job.",
   photo: "/photo.jpg",
   buttons: {
     work: "View Work",
@@ -38,9 +38,9 @@ export const about = {
     "Outside work I led a 50+ member students' council and 1,000-participant programs — which taught me to ship with, and for, many stakeholders.",
   ],
   stats: [
-    { value: "25", label: "component BRDs prepared" },
-    { value: "3", label: "countries of payroll domain exposure" },
+    { value: "25", label: "component BRDs being prepared" },
     { value: "50+", label: "member council led" },
+    { value: "1,000", label: "participants across programs run" },
   ],
 };
 
@@ -62,78 +62,78 @@ export const work = {
       title: "Payroll tax reporting automation",
       tag: "Automation · Payroll",
       problem:
-        "A statutory payroll-tax report was prepared manually by an external vendor from raw data, with the logic undocumented and no way to scale it.",
-      role: "Owned the challenge end to end as a manager-set assignment.",
+        "A statutory payroll-tax report was being produced manually by a partner, and the logic behind it was not documented.",
+      role: "Working on this as a challenge set by my manager.",
       approach:
-        "Reverse-engineered the report from raw data, mapped the underlying logic and rules, and generalised it into a reusable model.",
+        "Decoding the report from raw data, mapping the underlying logic, and building a generalised model.",
       outcome:
-        "A documented, generalised model prepared for handoff to the engineering team to build — replacing a manual deliverable.",
+        "In progress: a generalised model intended for the engineering team to build, to replace the manual deliverable.",
     },
     {
       title: "AI agent quality testing",
       tag: "AI · QA",
       problem:
-        "A GenAI assistant in an employee self-service product needed to be validated against real-world payroll questions before and across releases.",
-      role: "Test designer and executor, and author of the test report.",
+        "A GenAI assistant in an employee self-service product needs to be tested against realistic payroll scenarios.",
+      role: "Designing the test cases, running them and writing the test report.",
       approach:
-        "Designed scenario-based test cases covering payroll models, configuration and new release features; ran them and recorded results.",
+        "Scenario-based test cases covering payroll models, configuration and release features.",
       outcome:
-        "A written test report giving the team structured evidence of the assistant's quality and gaps.",
+        "In progress: test runs and a written test report for the team.",
     },
     {
       title: "Payroll transformation BRDs",
       tag: "Requirements · Enterprise",
       problem:
         "A large enterprise payroll transformation had requirements scattered across teams and client workshops.",
-      role: "Coordinated inputs across teams and authored the business requirement documents.",
+      role: "Preparing the BRDs from inputs gathered across teams and client workshops.",
       approach:
-        "Compiled inputs into a standard BRD format, drafted the first BRD as the template for the rest, and built GenAI-assisted digests of workshop transcripts mapped to all 25 components, plus a gap list for review.",
+        "Compiling inputs into the standard BRD format; drafted the first BRD, which is now the template for the rest. Built GenAI-assisted digests of workshop transcripts mapped to all 25 components, plus a gap list for team review.",
       outcome:
-        "25 component BRDs structured on one template; the first BRD was co-presented with the team lead to the client's transformation office.",
+        "First BRD co-presented with the team lead to the client's transformation office; the remaining BRDs are in progress.",
     },
     {
       title: "Client implementation",
       tag: "Implementation · Client-facing",
       problem:
-        "An international client's payroll implementation needed a single, reliable point of contact between the client and internal teams.",
-      role: "Implementation SPOC.",
+        "An international client's payroll implementation.",
+      role: "Implementation SPOC (single point of contact).",
       approach:
-        "Coordinated requirements, queries and follow-ups between the client and internal teams.",
+        "Coordinating between the client and internal teams.",
       outcome:
-        "Clear single-threaded communication through the implementation.",
+        "Ongoing client-facing implementation experience.",
     },
     {
       title: "Test automation",
       tag: "Automation · Quality",
       problem:
-        "Regression testing for payroll modules was manual, slow and hard to repeat.",
+        "Regression testing for payroll modules is currently manual.",
       role: "In charge of moving regression testing from manual to automated; writing end-to-end test cases for the next-gen payroll platform.",
       approach:
         "Evaluating payroll modules for automation with a Playwright-based RPA tool, working alongside module owners.",
       outcome:
-        "An in-progress shift from manual to automated regression, with E2E test cases for the next-gen platform.",
+        "In progress: moving regression testing from manual to automated, plus E2E test cases for the next-gen payroll platform.",
     },
     {
       title: "Competitive benchmarking & global payroll mappings",
       tag: "Research · Product",
       problem:
-        "The team needed an objective view of the platform against leading global HCM suites, plus localisation inputs for French payroll.",
-      role: "Researcher and analyst.",
+        "Understanding how the platform compares with leading global HCM suites, and preparing inputs for French payroll (DSN).",
+      role: "Benchmarking and drafting the mappings.",
       approach:
         "Benchmarked the platform against leading HCM platforms across payroll, time & absence and core HR; drafted French DSN field mappings to the product's field master.",
       outcome:
-        "Benchmark findings and DSN mappings delivered for team review.",
+        "Benchmark completed; DSN field mappings drafted for team review.",
     },
     {
       title: "AI Collections Product Concept",
       tag: "Case competition · Fintech",
       problem:
-        "An NBFC (TVS Credit E.P.I.C. analytics case, Aug 2025) needed to improve loan recovery without over-contacting good customers.",
-      role: "Product framing and solution design.",
+        "An NBFC loan-recovery problem from the TVS Credit E.P.I.C. analytics case (Aug 2025): recover dues without needlessly contacting good customers.",
+      role: "Framed the problem as a product concept.",
       approach:
         "Framed a three-part product: XGBoost default-risk scores with SHAP explanations, K-Means customer personas, and an LLM chatbot whose tone adapts to each persona. Chose F1 with precision–recall threshold tuning.",
       outcome:
-        "A product concept trading off recovery against needless contact with good customers.",
+        "A concept-level product proposal; not a deployed system.",
     },
   ] as CaseStudy[],
   more: {
