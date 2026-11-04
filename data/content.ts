@@ -17,14 +17,16 @@ export const hero = {
   greeting: "Hi, I'm",
   name: "Amuluru Pavan Sai",
   headline: "Management Trainee at Neeyamo",
-  typedPrefix: "Currently working on",
-  typed: [
-    "global payroll technology",
-    "requirements & BRDs",
-    "GenAI assistant testing",
-    "test automation",
-    "HR-tech benchmarking",
-  ],
+  // Giant text that scrolls behind the hero visual.
+  marquee: "Amuluru Pavan Sai. Management Trainee. Payroll & HR-tech.",
+  ringText: "AMULURU PAVAN SAI · PORTFOLIO · 2026 ·",
+  captions: {
+    left: "MANAGEMENT TRAINEE — NEEYAMO",
+    middle: ["PAYROLL · HR-TECH · REQUIREMENTS", "AI TESTING · AUTOMATION · PRODUCT"],
+    scroll: "SCROLL TO EXPLORE",
+    right: "LINKEDIN ↗",
+  },
+  modes: { light: "WAKE", dark: "DREAM" },
   tagline:
     "Looking to grow into Product Manager / Associate PM / Business Analyst roles in HR-tech & payroll.",
   subline:
