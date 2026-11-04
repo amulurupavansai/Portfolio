@@ -5,9 +5,9 @@
 
 export const site = {
   name: "Amuluru Pavan Sai",
-  title: "Amuluru Pavan Sai — Product Manager | HR-Tech & Payroll",
+  title: "Amuluru Pavan Sai — Management Trainee | HR-Tech & Payroll",
   description:
-    "Portfolio of Amuluru Pavan Sai — IIT Palakkad graduate and Management Trainee (Product Manager track) at Neeyamo, building for HR-tech & global payroll.",
+    "Portfolio of Amuluru Pavan Sai — IIT Palakkad graduate and Management Trainee at Neeyamo, building for HR-tech & global payroll.",
   // Set this to your deployed URL (used for Open Graph / canonical links).
   url: "https://amulurupavansai.vercel.app",
   ogImage: "/photo.jpg",
@@ -17,7 +17,7 @@ export const hero = {
   greeting: "Hi, I'm",
   name: "Amuluru Pavan Sai",
   headline:
-    "Aspiring Product Manager / Associate PM / Business Analyst for HR-tech & payroll",
+    "Management Trainee at Neeyamo · HR-tech & payroll · Looking to grow into Product Manager / Associate PM / Business Analyst roles",
   subline:
     "I turn messy payroll processes and cross-team inputs into clear requirements, tested AI features and products engineering can build.",
   photo: "/photo.jpg",

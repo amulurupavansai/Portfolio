@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Person",
     name: site.name,
     url: site.url,
-    jobTitle: "Management Trainee, Product Management",
+    jobTitle: "Management Trainee",
     worksFor: { "@type": "Organization", name: "Neeyamo" },
     alumniOf: "Indian Institute of Technology Palakkad",
   };
