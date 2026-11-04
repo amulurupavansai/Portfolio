@@ -38,7 +38,7 @@ export const about = {
     "Outside work I led a 50+ member students' council and 1,000-participant programs — which taught me to ship with, and for, many stakeholders.",
   ],
   stats: [
-    { value: "25", label: "component BRDs being prepared" },
+    { value: "25", label: "component BRDs prepared" },
     { value: "50+", label: "member council led" },
     { value: "1,000", label: "participants across programs run" },
   ],
@@ -85,11 +85,11 @@ export const work = {
       tag: "Requirements · Enterprise",
       problem:
         "A large enterprise payroll transformation had requirements scattered across teams and client workshops.",
-      role: "Preparing the BRDs from inputs gathered across teams and client workshops.",
+      role: "Prepared the BRDs from inputs gathered across teams and client workshops.",
       approach:
-        "Compiling inputs into the standard BRD format; drafted the first BRD, which is now the template for the rest. Built GenAI-assisted digests of workshop transcripts mapped to all 25 components, plus a gap list for team review.",
+        "Compiled inputs into the standard BRD format; drafted the first BRD, which became the template for the rest. Built GenAI-assisted digests of workshop transcripts mapped to all 25 components, plus a gap list for team review.",
       outcome:
-        "First BRD co-presented with the team lead to the client's transformation office; the remaining BRDs are in progress.",
+        "All 25 component BRDs completed; the first was co-presented with the team lead to the client's transformation office.",
     },
     {
       title: "Client implementation",
@@ -213,7 +213,7 @@ export const timeline = {
       org: "Neeyamo — Emerging Leaders Program (Product Manager track)",
       place: "Pune, India",
       points: [
-        "Preparing 25 component BRDs for a large enterprise client's India payroll transformation from inputs across teams and client workshops.",
+        "Prepared 25 component BRDs for a large enterprise client's India payroll transformation from inputs across teams and client workshops.",
         "Testing a GenAI employee self-service assistant with scenario-based test cases and test reports.",
         "Moving regression testing from manual to automated; writing E2E test cases for the next-gen payroll platform.",
         "Benchmarking the platform against leading HCM suites; drafting French DSN field mappings.",
