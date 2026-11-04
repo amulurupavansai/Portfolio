@@ -5,11 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },
-      colors: { accent: { DEFAULT: "#4f46e5", dark: "#818cf8" } },
-      keyframes: {
-        fadeUp: { "0%": { opacity: "0", transform: "translateY(16px)" }, "100%": { opacity: "1", transform: "none" } },
+      colors: {
+        bg: "var(--bg)", ink: "var(--ink)", muted: "var(--muted)",
+        line: "var(--line)", card: "var(--card)", accent: "var(--accent)",
       },
-      animation: { fadeUp: "fadeUp .7s ease-out both" },
     },
   },
   plugins: [],
