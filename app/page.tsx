@@ -6,14 +6,17 @@ import Orb from "@/components/Orb";
 import Counter from "@/components/Counter";
 import WorkList from "@/components/WorkList";
 import ContactForm from "@/components/ContactForm";
-import { hero, about, work, skills, timeline, contact, footer, site } from "@/data/content";
+import Link from "next/link";
+import { hero, about, work, skills, snapshot, blog, timeline, contact, footer, site } from "@/data/content";
+import { getPosts, formatDate } from "@/lib/blog";
 
 const sec = "pad relative z-10 py-24 md:py-36";
 const idx = (n: string, t: string) => (
-  <p className="label mb-8 text-muted">({n}) — {t}</p>
+  <h2 className="label mb-8 text-muted">({n}) — {t}</h2>
 );
 
 export default function Home() {
+  const posts = getPosts().slice(0, 3);
   const marquee = `${hero.marquee} `;
   return (
     <>
@@ -65,16 +68,16 @@ export default function Home() {
               {about.paragraphs.filter((_, i) => i !== 1).map((p) => <p key={p}>{p}</p>)}
             </Reveal>
           </div>
-          <dl className="mt-20 grid grid-cols-1 border-t border-ink sm:grid-cols-3">
+          <div className="mt-20 grid grid-cols-1 border-t border-ink sm:grid-cols-3">
             {about.stats.map((s, i) => (
               <Reveal key={s.label} delay={i * 120}>
                 <div className="border-b border-line py-8 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
-                  <dt className="display text-6xl md:text-8xl"><Counter value={s.value} suffix={s.suffix} /></dt>
-                  <dd className="label mt-3 text-muted">{s.label}</dd>
+                  <p className="display text-6xl md:text-8xl"><Counter value={s.value} suffix={s.suffix} /></p>
+                  <p className="label mt-3 text-muted">{s.label}</p>
                 </div>
               </Reveal>
             ))}
-          </dl>
+          </div>
         </section>
 
         {/* ---------------- Work ---------------- */}
@@ -114,9 +117,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------------- PM Snapshot ---------------- */}
+        <section id="snapshot" className={sec}>
+          {idx("04", snapshot.heading)}
+          <Reveal><p className="display max-w-4xl text-4xl sm:text-6xl">{snapshot.headline}</p></Reveal>
+          <p className="mt-6 max-w-xl text-muted">{snapshot.intro}</p>
+          <div className="mt-10 grid gap-8 border-t border-ink pt-8 md:grid-cols-3">
+            {snapshot.columns.map((c) => (
+              <div key={c.name}>
+                <h3 className="label mb-3">{c.name}</h3>
+                <ul className="space-y-1.5 text-[15px] text-muted">{c.items.map((i) => <li key={i}>{i}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href={snapshot.file} download data-cursor className="label inline-flex min-h-[44px] items-center border border-ink px-5">{snapshot.download}</a>
+            <Link href="/snapshot" data-cursor className="label inline-flex min-h-[44px] items-center border-b border-ink">{snapshot.viewPage}</Link>
+          </div>
+        </section>
+
         {/* ---------------- Timeline ---------------- */}
         <section id="timeline" className={sec}>
-          {idx("04", timeline.heading)}
+          {idx("05", timeline.heading)}
           <div className="border-t border-ink">
             {timeline.items.map((t) => (
               <Reveal key={t.title}>
@@ -138,9 +160,26 @@ export default function Home() {
           </Reveal>
         </section>
 
+        {/* ---------------- Writing ---------------- */}
+        <section id="writing" className={sec}>
+          {idx("06", blog.heading)}
+          <p className="mb-10 max-w-xl text-muted">{blog.teaser}</p>
+          <ul className="border-t border-ink">
+            {posts.map((p) => (
+              <li key={p.slug} className="border-b border-line">
+                <Link href={`/blog/${p.slug}`} data-cursor className="grid gap-3 py-8 md:grid-cols-12">
+                  <time dateTime={p.date} className="label text-muted md:col-span-3">{formatDate(p.date)}</time>
+                  <span className="display text-3xl sm:text-4xl md:col-span-9">{p.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/blog" data-cursor className="label mt-8 inline-flex min-h-[44px] items-center border-b border-ink">{blog.viewAll}</Link>
+        </section>
+
         {/* ---------------- Contact ---------------- */}
         <section id="contact" className={`${sec} pb-32`}>
-          {idx("05", contact.heading)}
+          {idx("07", contact.heading)}
           <Reveal>
             <a href={`mailto:${contact.email}`} data-cursor className="display block text-[clamp(1.6rem,6.2vw,7rem)] transition-opacity hover:opacity-60">{contact.email}</a>
           </Reveal>
