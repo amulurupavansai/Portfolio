@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #e9e8e3; --ink: #111111; --muted: #77766f; --line: rgba(17,17,17,.13);
+  --bg: #e9e8e3; --ink: #111111; --muted: #5a5952; --line: rgba(17,17,17,.13);
   --card: #f1f0ec; --accent: #5b4bff;
 }
 .dark {
-  --bg: #0d0c12; --ink: #f1efe9; --muted: #8e8c98; --line: rgba(241,239,233,.13);
+  --bg: #0d0c12; --ink: #f1efe9; --muted: #a3a1ae; --line: rgba(241,239,233,.13);
   --card: #15141c; --accent: #a99bff;
 }
 
@@ -45,6 +45,8 @@ section { scroll-margin-top: 0; }
 }
 .dark .orb { box-shadow: inset 0 0 60px rgba(255,255,255,.5), inset -30px -40px 80px rgba(0,0,40,.4), 0 0 120px -10px rgba(140,110,255,.45); }
 .orb::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.55) 48%, transparent 60%); mix-blend-mode: overlay; animation: sheen 6s ease-in-out infinite; }
+/* The animated displacement filter is costly on phones; drop it there. */
+@media (max-width: 767px) { .orb { filter: none; } }
 @keyframes morph { 0%,100% { border-radius: 46% 54% 52% 48% / 52% 44% 56% 48%; } 33% { border-radius: 54% 46% 44% 56% / 46% 56% 44% 54%; } 66% { border-radius: 48% 52% 58% 42% / 56% 46% 54% 44%; } }
 @keyframes drift { 0%,100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(8deg) translateY(-18px); } }
 @keyframes sheen { 0%,100% { transform: translateX(-30%); } 50% { transform: translateX(30%); } }
@@ -71,4 +73,19 @@ section { scroll-margin-top: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- blog prose ---------- */
+.prose-post { font-size: 1.0625rem; line-height: 1.75; }
+.prose-post h2 { font-weight: 700; letter-spacing: -0.03em; font-size: 1.6rem; line-height: 1.15; margin: 2.5rem 0 .75rem; }
+.prose-post p { margin: 0 0 1.1rem; color: var(--ink); }
+.prose-post a { text-decoration: underline; text-underline-offset: 3px; }
+.prose-post ul, .prose-post ol { margin: 0 0 1.1rem 1.25rem; list-style: disc; }
+
+/* ---------- print (PM Snapshot PDF) ---------- */
+@page { size: A4; margin: 12mm; }
+@media print {
+  :root { --bg: #fff; --ink: #111; --muted: #444; --line: rgba(0,0,0,.2); --card: #fff; }
+  body { background: #fff; }
+  .snapshot-sheet { max-width: none; padding: 0; background: #fff; }
 }
